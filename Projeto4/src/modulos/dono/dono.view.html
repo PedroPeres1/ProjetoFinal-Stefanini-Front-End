@@ -1,0 +1,74 @@
+<html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Stefanini | Treinamento</title>
+  <link rel="stylesheet" href="scss/style.css">
+
+</head>
+<div ng-app='myApp'   style="top: inherit">
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="http://127.0.0.1:49972/src/index.html"><img width="70px" src="src/favicon.png" />Treinamento</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav mr-auto">
+             <li class="nav-item">
+              <a class="nav-link" ui-sref="dono"  href="http://127.0.0.1:49972/src/modulos/dono/dono.view.html">Lista Dono</span></a>
+            </li>
+          </ul>
+    
+    
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav mr-auto">
+             <li class="nav-item">
+              <a class="nav-link" ui-sref="dono"  href="http://127.0.0.1:49972/src/modulos/home/home.view.html">Cadastrar</span></a>
+            </li>
+          </ul>
+            
+       <!--<form class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-success my-2 my-sm-0">Exercício</button>
+          </form>-->
+        </div>
+      </nav>
+
+      <main role="main">
+        <div class="container">
+            <ui-view></ui-view>
+          </div><br><br><br>
+
+<div class="jumbotron">
+    <h1>Hello, <script>{{vm.name}}</script></h1>
+
+  <div class="row">
+      <div class="center"></div>
+    <table class="table table-bordered table-dark">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col" >Dono</th>
+          <th scope="col">Cachorro</th>
+          
+            <th scope="col">Editar e Excluir</th>
+        </tr>
+      </thead>
+      <tbody ng-repeat='dono in vm.donos'>
+          <tr ng-repeat='cachorro in dono.cachorros'>
+              <td><b><script>{{$index+1}}</script></b></td>
+            <td><script>{{dono.nome}}</script></td>
+            <td><script>{{cachorro.nome}}</script></td>
+            <td><button type="button" class="btn btn-primary">Editar</button> 
+                <button type="button" class="btn btn-danger">Excluir</button> </td>
+        </tr>
+      </tbody>
+    </table>
+    
+  </div>
+
+</div>
+</html>
